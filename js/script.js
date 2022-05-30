@@ -1,21 +1,57 @@
-// Copyright (c) 2020 Mr. Coxall All rights reserved
+// Copyright (c) 2022 Marshall All rights reserved
 //
-// Created by: Mr. Coxall
-// Created on: Sep 2020
+// Created by: Marshall
+// Created on: May 2022
 // This file contains the JS functions for index.html
 
 /**
  * Check servie worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/github-page-pwa/sw.js", {
-    scope: "/github-page-pwa/",
+  navigator.serviceWorker.register("/ICS2O-Unit5-08-HTML", {
+    scope: "/ICS2O-Unit5-08-HTML/",
   })
 }
 
+'use strict'
+
 /**
- * This function displays an alert.
+ * This function calculates long division
  */
 function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+  // input
+  var firstInteger = document.getElementById("integer-one").value
+  var secondInteger = document.getElementById("integer-two").value
+
+  // process
+  var total = 0
+  var firstIntegerAsInt = parseInt(firstInteger)
+  var secondIntegerAsInt = parseInt(secondInteger)
+  var remainder = firstIntegerAsInt
+
+
+  if ((firstIntegerAsInt > 0) && (secondIntegerAsInt > 0)) {
+    while (remainder >= secondIntegerAsInt) {
+      remainder = remainder - secondIntegerAsInt
+      total++
+    }
+  } else if ((firstIntegerAsInt < 0) && (secondIntegerAsInt < 0)) {
+    remainder = Math.abs(remainder)
+    secondIntegerAsInt = Math.abs(secondIntegerAsInt)
+    while (remainder >= secondIntegerAsInt) {
+      remainder = remainder - secondIntegerAsInt
+      total++
+    }
+  } else {
+    remainder = Math.abs(remainder)
+    secondIntegerAsInt = Math.abs(secondIntegerAsInt)
+    while (remainder >= secondIntegerAsInt) {
+      remainder = remainder - secondIntegerAsInt
+      total++
+    }
+    total = -Math.abs(total)
+  }
+
+  // output
+  document.getElementById("loop").innerHTML = firstInteger + " ÷ " + secondInteger + " = " + total + " R " + remainder
 }
