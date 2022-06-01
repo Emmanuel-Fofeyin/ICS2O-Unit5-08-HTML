@@ -13,7 +13,7 @@ if (navigator.serviceWorker) {
   })
 }
 
-'use strict'
+;("use strict")
 
 /**
  * This function calculates long division
@@ -29,13 +29,13 @@ function myButtonClicked() {
   var secondIntegerAsInt = parseInt(secondInteger)
   var remainder = firstIntegerAsInt
 
-
-  if ((firstIntegerAsInt > 0) && (secondIntegerAsInt > 0)) {
+  
+  if (firstIntegerAsInt < 0 && secondIntegerAsInt < 0) {
     while (remainder >= secondIntegerAsInt) {
       remainder = remainder - secondIntegerAsInt
       total++
     }
-  } else if ((firstIntegerAsInt < 0) && (secondIntegerAsInt < 0)) {
+  } else if (firstIntegerAsInt < 0 && secondIntegerAsInt < 0) {
     remainder = Math.abs(remainder)
     secondIntegerAsInt = Math.abs(secondIntegerAsInt)
     while (remainder >= secondIntegerAsInt) {
@@ -53,5 +53,6 @@ function myButtonClicked() {
   }
 
   // output
-  document.getElementById("loop").innerHTML = firstInteger + " ÷ " + secondInteger + " = " + total + " R " + remainder
+  document.getElementById("loop").innerHTML =
+  firstInteger + " ÷ " + secondInteger + " = " + total + " R " + remainder
 }
