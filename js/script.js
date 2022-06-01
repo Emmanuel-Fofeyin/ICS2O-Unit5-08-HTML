@@ -53,5 +53,5 @@ function myButtonClicked() {
 
   // output
   document.getElementById("loop").innerHTML =
-  firstInteger + " ÷ " + secondInteger + " = " + total + " R " + remainder
-}  
+    firstInteger + " ÷ " + secondInteger + " = " + total + " R " + remainder
+}
