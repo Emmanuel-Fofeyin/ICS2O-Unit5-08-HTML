@@ -29,7 +29,6 @@ function myButtonClicked() {
   var secondIntegerAsInt = parseInt(secondInteger)
   var remainder = firstIntegerAsInt
 
-  
   if (firstIntegerAsInt < 0 && secondIntegerAsInt < 0) {
     while (remainder >= secondIntegerAsInt) {
       remainder = remainder - secondIntegerAsInt
@@ -55,4 +54,4 @@ function myButtonClicked() {
   // output
   document.getElementById("loop").innerHTML =
   firstInteger + " ÷ " + secondInteger + " = " + total + " R " + remainder
-}
+}  
